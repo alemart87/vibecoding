@@ -24,3 +24,401 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Scan Lines Effect */
+.scanlines {
+  background: linear-gradient(
+    transparent 50%,
+    rgba(255, 255, 255, 0.03) 50%
+  );
+  background-size: 100% 4px;
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+/* RAFA Name in Header - Tech Style */
+.rafa-name-tech {
+  display: inline-block;
+  color: white;
+  font-weight: 900;
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.3),
+    0 0 30px rgba(255, 255, 255, 0.2);
+  animation: rafa-tech-pulse 2s ease-in-out infinite;
+  position: relative;
+}
+
+@keyframes rafa-tech-pulse {
+  0%, 100% {
+    text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.5),
+      0 0 20px rgba(255, 255, 255, 0.3),
+      0 0 30px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    text-shadow: 
+      0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 40px rgba(255, 255, 255, 0.5),
+      0 0 60px rgba(255, 255, 255, 0.3);
+  }
+}
+
+.rafa-name-tech::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 2px;
+  height: 100%;
+  background: white;
+  animation: rafa-cursor-blink 1s infinite;
+}
+
+@keyframes rafa-cursor-blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* RAFA Hero Container - Tech Style */
+.rafa-hero-container-tech {
+  position: relative;
+  display: inline-block;
+  margin: 2rem 0;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.rafa-hero-text-tech {
+  font-size: 10rem;
+  font-weight: 900;
+  line-height: 1;
+  position: relative;
+  z-index: 2;
+  letter-spacing: 0.1em;
+  font-family: 'Courier New', monospace;
+}
+
+@media (max-width: 768px) {
+  .rafa-hero-text-tech {
+    font-size: 6rem;
+  }
+}
+
+.rafa-tech-text {
+  color: white;
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.6),
+    0 0 30px rgba(255, 255, 255, 0.4),
+    0 0 40px rgba(255, 255, 255, 0.2);
+  position: relative;
+  display: inline-block;
+  animation: rafa-tech-glow 3s ease-in-out infinite;
+}
+
+@keyframes rafa-tech-glow {
+  0%, 100% {
+    text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.8),
+      0 0 20px rgba(255, 255, 255, 0.6),
+      0 0 30px rgba(255, 255, 255, 0.4);
+    filter: brightness(1);
+  }
+  50% {
+    text-shadow: 
+      0 0 20px rgba(255, 255, 255, 1),
+      0 0 40px rgba(255, 255, 255, 0.8),
+      0 0 60px rgba(255, 255, 255, 0.6),
+      0 0 80px rgba(255, 255, 255, 0.4);
+    filter: brightness(1.2);
+  }
+}
+
+/* Glitch Effect */
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 rgba(255, 255, 255, 0.5);
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 rgba(255, 255, 255, 0.5), 2px 2px rgba(255, 255, 255, 0.5);
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim2 1s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+  5% {
+    clip: rect(12px, 9999px, 59px, 0);
+    transform: skew(0.5deg);
+  }
+  10% {
+    clip: rect(78px, 9999px, 29px, 0);
+    transform: skew(0.5deg);
+  }
+  15% {
+    clip: rect(42px, 9999px, 73px, 0);
+    transform: skew(0.5deg);
+  }
+  20% {
+    clip: rect(56px, 9999px, 68px, 0);
+    transform: skew(0.5deg);
+  }
+  25% {
+    clip: rect(38px, 9999px, 82px, 0);
+    transform: skew(0.5deg);
+  }
+  30% {
+    clip: rect(8px, 9999px, 47px, 0);
+    transform: skew(0.5deg);
+  }
+  35% {
+    clip: rect(21px, 9999px, 63px, 0);
+    transform: skew(0.5deg);
+  }
+  40% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+  45% {
+    clip: rect(91px, 9999px, 37px, 0);
+    transform: skew(0.5deg);
+  }
+  50% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+  55% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+  60% {
+    clip: rect(3px, 9999px, 89px, 0);
+    transform: skew(0.5deg);
+  }
+  65% {
+    clip: rect(66px, 9999px, 11px, 0);
+    transform: skew(0.5deg);
+  }
+  70% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+  75% {
+    clip: rect(29px, 9999px, 55px, 0);
+    transform: skew(0.5deg);
+  }
+  80% {
+    clip: rect(7px, 9999px, 72px, 0);
+    transform: skew(0.5deg);
+  }
+  85% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+  90% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+  95% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+  100% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+}
+
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(65px, 9999px, 100px, 0);
+    transform: skew(0.5deg);
+  }
+  5% {
+    clip: rect(96px, 9999px, 73px, 0);
+    transform: skew(0.5deg);
+  }
+  10% {
+    clip: rect(25px, 9999px, 32px, 0);
+    transform: skew(0.5deg);
+  }
+  15% {
+    clip: rect(52px, 9999px, 55px, 0);
+    transform: skew(0.5deg);
+  }
+  20% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+  25% {
+    clip: rect(81px, 9999px, 15px, 0);
+    transform: skew(0.5deg);
+  }
+  30% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+  35% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+  40% {
+    clip: rect(11px, 9999px, 88px, 0);
+    transform: skew(0.5deg);
+  }
+  45% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+  50% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+  55% {
+    clip: rect(58px, 9999px, 28px, 0);
+    transform: skew(0.5deg);
+  }
+  60% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+  65% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+  70% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+  75% {
+    clip: rect(87px, 9999px, 18px, 0);
+    transform: skew(0.5deg);
+  }
+  80% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+  85% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+  90% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+  95% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+  100% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.5deg);
+  }
+}
+
+/* Grid Overlay */
+.rafa-grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Terminal Lines */
+.rafa-terminal-lines {
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  width: 100%;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.4);
+  z-index: 1;
+}
+
+.terminal-line {
+  margin-bottom: 0.5rem;
+  animation: terminal-typing 2s steps(20) infinite;
+}
+
+.terminal-line:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.terminal-line:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.terminal-line:nth-child(3) {
+  animation-delay: 2s;
+}
+
+@keyframes terminal-typing {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+/* Hover effect for RAFA name in header */
+.rafa-name-tech:hover {
+  animation: rafa-tech-pulse 0.5s ease infinite, rafa-tech-bounce 0.3s ease;
+  transform: scale(1.05);
+}
+
+@keyframes rafa-tech-bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
