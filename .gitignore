@@ -32,8 +32,9 @@ build/
 *.sqlite3
 db.sqlite3
 
-# Variables de entorno
+# Variables de entorno (excepto .env.example)
 .env
+!.env.example
 .env.local
 .env.development.local
 .env.test.local

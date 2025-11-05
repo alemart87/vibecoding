@@ -32,6 +32,42 @@ This repository is ideal for developers who want to leverage AI tools to speed u
 
 ---
 
+## 🚀 Instalación Rápida / Quick Installation
+
+### Con NPX (Recomendado / Recommended)
+
+La forma más rápida de empezar es usando nuestro instalador NPX:
+
+```bash
+npx create-vibecoding my-project
+```
+
+El instalador automáticamente:
+- ✅ Clona el repositorio
+- ✅ Instala todas las dependencias (frontend y backend)
+- ✅ Configura los archivos .env
+- ✅ Crea el entorno virtual de Python
+- ✅ Te ofrece iniciar el servidor de desarrollo
+
+**The fastest way to get started is using our NPX installer:**
+
+```bash
+npx create-vibecoding my-project
+```
+
+The installer automatically:
+- ✅ Clones the repository
+- ✅ Installs all dependencies (frontend and backend)
+- ✅ Sets up .env files
+- ✅ Creates Python virtual environment
+- ✅ Offers to start the development server
+
+### Instalación Manual / Manual Installation
+
+Si prefieres instalarlo manualmente, sigue las instrucciones en las secciones siguientes.
+
+---
+
 ## 1. Prompts para Creación de Proyecto con Next.js y Flask
 
 ### Prompts para usar con Cursor AI:
